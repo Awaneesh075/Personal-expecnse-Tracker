@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.metricCard {
+  background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-card) 100%);
+  border-top: 2px solid var(--accent-primary);
+}
+
+.metricValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: var(--spacing-sm);
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chartContainer {
+  height: 350px;
+  width: 100%;
+  margin-top: var(--spacing-lg);
+}
+
+.budgetCard {
+  border-left: 4px solid var(--warning);
+}
+
+.progressBarContainer {
+  height: 12px;
+  background-color: var(--glass-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: var(--spacing-md);
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--success));
+  transition: width 1s ease-in-out;
+}
+
+.progressBarFill.warning {
+  background: var(--warning);
+}
+
+.progressBarFill.danger {
+  background: var(--danger);
+}
